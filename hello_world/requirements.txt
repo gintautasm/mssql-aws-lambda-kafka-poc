@@ -1,0 +1,2 @@
+confluent-kafka==2.2.0
+pymssql==2.2.8
