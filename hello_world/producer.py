@@ -51,9 +51,14 @@ def streamTable(recordList:List):
         'WarehouseId': r['PasswordHash'],
         'BackorderQuantity': r['BusinessEntityID']}
 
+        headers = {
+            'CorrelationId': str(time()),
+            'SecondHeader':'abc'
+        }
+
         # user_id = choice(user_ids)
         # product = choice(products)
-        producer.produce(topic, key=msg['skq'], value=json.dumps(msg), callback=delivery_callback)
+        producer.produce(topic, key=msg['sku'],headers=headers, value=json.dumps(msg), callback=delivery_callback)
         #count += 1
 
     # Block until the messages are sent.

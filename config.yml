@@ -1,0 +1,19 @@
+contexts:
+  remote-cluster:
+    brokers:
+    - confluent-cloud-hosted.eu-west-1.aws.confluent.cloud:9092
+    # optional: sasl support
+    sasl:
+      enabled: true
+      #dev
+      username: kafka-api-key
+      password: kafka-api-secret
+      requestTimeout: 10s
+
+    tls:
+      enabled: true
+
+  local-cluster:
+    brokers: broker:9092
+
+current-context: local-cluster
