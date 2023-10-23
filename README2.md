@@ -6,7 +6,7 @@ all containers has to be on the same network then you can use internal hostnames
 # launch containers
 
 docker network create main-backend
-docker-compose up -d
+docker compose up -d
 
 # restore database
 docker exec -it mssql-db \
@@ -35,5 +35,5 @@ docker run --rm -it --add-host=host.docker.internal:host-gateway \
     --parse-headers
 
 # destroy environment
-docker-compose down
+docker compose down
 ```
